@@ -1,196 +1,143 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Posts on study in my room</title>
-    <link>http://localhost:1313/posts/</link>
-    <description>Recent content in Posts on study in my room</description>
-    <generator>Hugo -- 0.147.4</generator>
-    <language>ja</language>
-    <lastBuildDate>Wed, 04 Jun 2025 17:30:00 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>study</title>
-      <link>http://localhost:1313/posts/study/</link>
-      <pubDate>Wed, 04 Jun 2025 17:30:00 +0900</pubDate>
-      <guid>http://localhost:1313/posts/study/</guid>
-      <description>&lt;p&gt;３つめの記録です&lt;/p&gt;
-&lt;p&gt;最小構成で手抜きすることを考えています&lt;/p&gt;
-&lt;p&gt;test&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>study</title>
-      <link>http://localhost:1313/posts/study/</link>
-      <pubDate>Wed, 04 Jun 2025 17:30:00 +0900</pubDate>
-      <guid>http://localhost:1313/posts/study/</guid>
-      <description>&lt;p&gt;5
-つめの記録です&lt;/p&gt;
-&lt;p&gt;markdownでの記述を練習中&lt;/p&gt;
-&lt;p&gt;test&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>study25060404</title>
-      <link>http://localhost:1313/posts/study25060404/</link>
-      <pubDate>Wed, 04 Jun 2025 17:30:00 +0900</pubDate>
-      <guid>http://localhost:1313/posts/study25060404/</guid>
-      <description>&lt;h2 id=&#34;-本日の目的&#34;&gt;✅ 本日の目的&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;シンプルな個人用備忘録ブログ「study in my room」の構築開始&lt;/li&gt;
-&lt;li&gt;Hugo + GitHub Pages 環境での最小構成セットアップと確認&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;-実施作業&#34;&gt;🔨 実施作業&lt;/h2&gt;
-&lt;h3 id=&#34;1-テーマ開発ベース選定&#34;&gt;1. テーマ・開発ベース選定&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;使用テーマ：&lt;code&gt;hugo-PaperMod&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;GitHub リポジトリ（テーマ管理）：&lt;code&gt;https://github.com/masa162/ikuta-minimal-theme&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;2-ローカル開発環境の立ち上げ&#34;&gt;2. ローカル開発環境の立ち上げ&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;hugo server&lt;/code&gt; により &lt;code&gt;localhost:1313&lt;/code&gt; で確認&lt;/li&gt;
-&lt;li&gt;最初のページレンダリング成功（タイトル表示のみ）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;3-投稿用ディレクトリの作成&#34;&gt;3. 投稿用ディレクトリの作成&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;mkdir -p content/posts&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;hugo new content/posts/first-memo.md&lt;/code&gt; により記事ファイル生成&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;4-記事が404エラーになる問題の調査と解決&#34;&gt;4. 記事が404エラーになる問題の調査と解決&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;draft = false&lt;/code&gt; が設定されていないことが原因&lt;/li&gt;
-&lt;li&gt;フロントマターを TOML形式で記述（&lt;code&gt;+++&lt;/code&gt; で囲む）&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;config.toml&lt;/code&gt; に &lt;code&gt;[permalinks] posts = &amp;quot;/posts/:slug/&amp;quot;&lt;/code&gt; を追加&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;5-slugの明示記述回避作業効率向上の工夫&#34;&gt;5. slugの明示記述回避（作業効率向上の工夫）&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;.md&lt;/code&gt;ファイル名をスラッグとして自動使用する設定に変更&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;frontmatter&lt;/span&gt;]
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;slug&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;filename&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;6-markdownとフロントマターの理解深化&#34;&gt;6. Markdownとフロントマターの理解深化&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;YAMLとTOMLの違い、Hugoでの推奨形式（TOML）&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;.md&lt;/code&gt;ファイルとMarkdown構文の本質を学習&lt;/li&gt;
-&lt;li&gt;フロントマターは“記事のメタ情報＝設計図”であるという本質的理解&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;-学び成果&#34;&gt;📌 学び・成果&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;実装作業以上に「構造と思想」の理解が深まった&lt;/li&gt;
-&lt;li&gt;Hugo開発における「ファイル駆動型開発」の考え方を体得&lt;/li&gt;
-&lt;li&gt;Markdownの役割、GUIとCLIの違い、Notionとの関係性を比較整理&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;-現在のディレクトリ構成要約&#34;&gt;📁 現在のディレクトリ構成（要約）&lt;/h2&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ikuta-minimal-theme/
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Posts on study in my room</title><link>https://masa162.github.io/posts/</link><description>Recent content in Posts on study in my room</description><generator>Hugo -- 0.147.4</generator><language>ja</language><lastBuildDate>Wed, 04 Jun 2025 17:30:00 +0900</lastBuildDate><atom:link href="https://masa162.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>study</title><link>https://masa162.github.io/posts/study/</link><pubDate>Wed, 04 Jun 2025 17:30:00 +0900</pubDate><guid>https://masa162.github.io/posts/study/</guid><description>&lt;p>３つめの記録です&lt;/p>
+&lt;p>最小構成で手抜きすることを考えています&lt;/p>
+&lt;p>test&lt;/p></description></item><item><title>study</title><link>https://masa162.github.io/posts/study/</link><pubDate>Wed, 04 Jun 2025 17:30:00 +0900</pubDate><guid>https://masa162.github.io/posts/study/</guid><description>&lt;p>5
+つめの記録です&lt;/p>
+&lt;p>markdownでの記述を練習中&lt;/p>
+&lt;p>test&lt;/p></description></item><item><title>study25060404</title><link>https://masa162.github.io/posts/study25060404/</link><pubDate>Wed, 04 Jun 2025 17:30:00 +0900</pubDate><guid>https://masa162.github.io/posts/study25060404/</guid><description>&lt;h2 id="-本日の目的">✅ 本日の目的&lt;/h2>
+&lt;ul>
+&lt;li>シンプルな個人用備忘録ブログ「study in my room」の構築開始&lt;/li>
+&lt;li>Hugo + GitHub Pages 環境での最小構成セットアップと確認&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-実施作業">🔨 実施作業&lt;/h2>
+&lt;h3 id="1-テーマ開発ベース選定">1. テーマ・開発ベース選定&lt;/h3>
+&lt;ul>
+&lt;li>使用テーマ：&lt;code>hugo-PaperMod&lt;/code>&lt;/li>
+&lt;li>GitHub リポジトリ（テーマ管理）：&lt;code>https://github.com/masa162/ikuta-minimal-theme&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h3 id="2-ローカル開発環境の立ち上げ">2. ローカル開発環境の立ち上げ&lt;/h3>
+&lt;ul>
+&lt;li>&lt;code>hugo server&lt;/code> により &lt;code>localhost:1313&lt;/code> で確認&lt;/li>
+&lt;li>最初のページレンダリング成功（タイトル表示のみ）&lt;/li>
+&lt;/ul>
+&lt;h3 id="3-投稿用ディレクトリの作成">3. 投稿用ディレクトリの作成&lt;/h3>
+&lt;ul>
+&lt;li>&lt;code>mkdir -p content/posts&lt;/code>&lt;/li>
+&lt;li>&lt;code>hugo new content/posts/first-memo.md&lt;/code> により記事ファイル生成&lt;/li>
+&lt;/ul>
+&lt;h3 id="4-記事が404エラーになる問題の調査と解決">4. 記事が404エラーになる問題の調査と解決&lt;/h3>
+&lt;ul>
+&lt;li>&lt;code>draft = false&lt;/code> が設定されていないことが原因&lt;/li>
+&lt;li>フロントマターを TOML形式で記述（&lt;code>+++&lt;/code> で囲む）&lt;/li>
+&lt;li>&lt;code>config.toml&lt;/code> に &lt;code>[permalinks] posts = &amp;quot;/posts/:slug/&amp;quot;&lt;/code> を追加&lt;/li>
+&lt;/ul>
+&lt;h3 id="5-slugの明示記述回避作業効率向上の工夫">5. slugの明示記述回避（作業効率向上の工夫）&lt;/h3>
+&lt;ul>
+&lt;li>&lt;code>.md&lt;/code>ファイル名をスラッグとして自動使用する設定に変更&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-toml" data-lang="toml">&lt;span style="display:flex;">&lt;span>[&lt;span style="color:#a6e22e">frontmatter&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">slug&lt;/span> = &lt;span style="color:#e6db74">&amp;#34;filename&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="6-markdownとフロントマターの理解深化">6. Markdownとフロントマターの理解深化&lt;/h3>
+&lt;ul>
+&lt;li>YAMLとTOMLの違い、Hugoでの推奨形式（TOML）&lt;/li>
+&lt;li>&lt;code>.md&lt;/code>ファイルとMarkdown構文の本質を学習&lt;/li>
+&lt;li>フロントマターは“記事のメタ情報＝設計図”であるという本質的理解&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-学び成果">📌 学び・成果&lt;/h2>
+&lt;ul>
+&lt;li>実装作業以上に「構造と思想」の理解が深まった&lt;/li>
+&lt;li>Hugo開発における「ファイル駆動型開発」の考え方を体得&lt;/li>
+&lt;li>Markdownの役割、GUIとCLIの違い、Notionとの関係性を比較整理&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-現在のディレクトリ構成要約">📁 現在のディレクトリ構成（要約）&lt;/h2>
+&lt;pre tabindex="0">&lt;code>ikuta-minimal-theme/
 ├── content/
-│   └── posts/
-│       └── first-memo.md
+│ └── posts/
+│ └── first-memo.md
 ├── themes/
-│   └── hugo-PaperMod/
+│ └── hugo-PaperMod/
 ├── config.toml
 ├── layouts_backup/
-&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
-&lt;h2 id=&#34;-次回todo後半作業予定&#34;&gt;📘 次回ToDo（後半作業予定）&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;archetypeテンプレのカスタマイズと運用整備&lt;/li&gt;
-&lt;li&gt;OGP/metaタグなどSEOの下地整備&lt;/li&gt;
-&lt;li&gt;PaperModテーマの軽量カスタム&lt;/li&gt;
-&lt;li&gt;Notion・GitHub・Hugo間の情報連携最適化&lt;/li&gt;
-&lt;li&gt;公開構成へのNetlifyまたはGitHub Pages展開&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    <item>
-      <title>ふたつめの記録</title>
-      <link>http://localhost:1313/posts/%E3%81%B5%E3%81%9F%E3%81%A4%E3%82%81%E3%81%AE%E8%A8%98%E9%8C%B2/</link>
-      <pubDate>Wed, 04 Jun 2025 17:30:00 +0900</pubDate>
-      <guid>http://localhost:1313/posts/%E3%81%B5%E3%81%9F%E3%81%A4%E3%82%81%E3%81%AE%E8%A8%98%E9%8C%B2/</guid>
-      <description>&lt;p&gt;これがふたつめの記録です、
-キロクブログを書き足します&lt;/p&gt;
-&lt;p&gt;test&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>最初のメモ</title>
-      <link>http://localhost:1313/posts/%E6%9C%80%E5%88%9D%E3%81%AE%E3%83%A1%E3%83%A2/</link>
-      <pubDate>Wed, 04 Jun 2025 17:30:00 +0900</pubDate>
-      <guid>http://localhost:1313/posts/%E6%9C%80%E5%88%9D%E3%81%AE%E3%83%A1%E3%83%A2/</guid>
-      <description>&lt;p&gt;これは最初の備忘録です。&lt;br&gt;
-Hugoで作った、自分だけの静かな記録。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/posts/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/</guid>
-      <description>&lt;h1 id=&#34;-作業報告書ブログstudy-in-my-room開発ログ&#34;&gt;📝 作業報告書：ブログ「study in my room」開発ログ&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;日付：2025年6月4日（水）&lt;/strong&gt;&lt;br&gt;
-&lt;strong&gt;環境：macOS + VS Code + Hugo + GitHub Pages&lt;/strong&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;-本日の目的&#34;&gt;✅ 本日の目的&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;シンプルな個人用備忘録ブログ「study in my room」の構築開始&lt;/li&gt;
-&lt;li&gt;Hugo + GitHub Pages 環境での最小構成セットアップと確認&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;-実施作業&#34;&gt;🔨 実施作業&lt;/h2&gt;
-&lt;h3 id=&#34;1-テーマ開発ベース選定&#34;&gt;1. テーマ・開発ベース選定&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;使用テーマ：&lt;code&gt;hugo-PaperMod&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;GitHub リポジトリ（テーマ管理）：&lt;code&gt;https://github.com/masa162/ikuta-minimal-theme&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;2-ローカル開発環境の立ち上げ&#34;&gt;2. ローカル開発環境の立ち上げ&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;hugo server&lt;/code&gt; により &lt;code&gt;localhost:1313&lt;/code&gt; で確認&lt;/li&gt;
-&lt;li&gt;最初のページレンダリング成功（タイトル表示のみ）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;3-投稿用ディレクトリの作成&#34;&gt;3. 投稿用ディレクトリの作成&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;mkdir -p content/posts&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;hugo new content/posts/first-memo.md&lt;/code&gt; により記事ファイル生成&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;4-記事が404エラーになる問題の調査と解決&#34;&gt;4. 記事が404エラーになる問題の調査と解決&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;draft = false&lt;/code&gt; が設定されていないことが原因&lt;/li&gt;
-&lt;li&gt;フロントマターを TOML形式で記述（&lt;code&gt;+++&lt;/code&gt; で囲む）&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;config.toml&lt;/code&gt; に &lt;code&gt;[permalinks] posts = &amp;quot;/posts/:slug/&amp;quot;&lt;/code&gt; を追加&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;5-slugの明示記述回避作業効率向上の工夫&#34;&gt;5. slugの明示記述回避（作業効率向上の工夫）&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;.md&lt;/code&gt;ファイル名をスラッグとして自動使用する設定に変更&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;frontmatter&lt;/span&gt;]
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;slug&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;filename&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;6-markdownとフロントマターの理解深化&#34;&gt;6. Markdownとフロントマターの理解深化&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;YAMLとTOMLの違い、Hugoでの推奨形式（TOML）&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;.md&lt;/code&gt;ファイルとMarkdown構文の本質を学習&lt;/li&gt;
-&lt;li&gt;フロントマターは“記事のメタ情報＝設計図”であるという本質的理解&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;-学び成果&#34;&gt;📌 学び・成果&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;実装作業以上に「構造と思想」の理解が深まった&lt;/li&gt;
-&lt;li&gt;Hugo開発における「ファイル駆動型開発」の考え方を体得&lt;/li&gt;
-&lt;li&gt;Markdownの役割、GUIとCLIの違い、Notionとの関係性を比較整理&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;-現在のディレクトリ構成要約&#34;&gt;📁 現在のディレクトリ構成（要約）&lt;/h2&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ikuta-minimal-theme/
+&lt;/code>&lt;/pre>&lt;hr>
+&lt;h2 id="-次回todo後半作業予定">📘 次回ToDo（後半作業予定）&lt;/h2>
+&lt;ul>
+&lt;li>archetypeテンプレのカスタマイズと運用整備&lt;/li>
+&lt;li>OGP/metaタグなどSEOの下地整備&lt;/li>
+&lt;li>PaperModテーマの軽量カスタム&lt;/li>
+&lt;li>Notion・GitHub・Hugo間の情報連携最適化&lt;/li>
+&lt;li>公開構成へのNetlifyまたはGitHub Pages展開&lt;/li>
+&lt;/ul></description></item><item><title>ふたつめの記録</title><link>https://masa162.github.io/posts/%E3%81%B5%E3%81%9F%E3%81%A4%E3%82%81%E3%81%AE%E8%A8%98%E9%8C%B2/</link><pubDate>Wed, 04 Jun 2025 17:30:00 +0900</pubDate><guid>https://masa162.github.io/posts/%E3%81%B5%E3%81%9F%E3%81%A4%E3%82%81%E3%81%AE%E8%A8%98%E9%8C%B2/</guid><description>&lt;p>これがふたつめの記録です、
+キロクブログを書き足します&lt;/p>
+&lt;p>test&lt;/p></description></item><item><title>最初のメモ</title><link>https://masa162.github.io/posts/%E6%9C%80%E5%88%9D%E3%81%AE%E3%83%A1%E3%83%A2/</link><pubDate>Wed, 04 Jun 2025 17:30:00 +0900</pubDate><guid>https://masa162.github.io/posts/%E6%9C%80%E5%88%9D%E3%81%AE%E3%83%A1%E3%83%A2/</guid><description>&lt;p>これは最初の備忘録です。&lt;br>
+Hugoで作った、自分だけの静かな記録。&lt;/p></description></item><item><title/><link>https://masa162.github.io/posts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://masa162.github.io/posts/</guid><description>&lt;h1 id="-作業報告書ブログstudy-in-my-room開発ログ">📝 作業報告書：ブログ「study in my room」開発ログ&lt;/h1>
+&lt;p>&lt;strong>日付：2025年6月4日（水）&lt;/strong>&lt;br>
+&lt;strong>環境：macOS + VS Code + Hugo + GitHub Pages&lt;/strong>&lt;/p>
+&lt;hr>
+&lt;h2 id="-本日の目的">✅ 本日の目的&lt;/h2>
+&lt;ul>
+&lt;li>シンプルな個人用備忘録ブログ「study in my room」の構築開始&lt;/li>
+&lt;li>Hugo + GitHub Pages 環境での最小構成セットアップと確認&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-実施作業">🔨 実施作業&lt;/h2>
+&lt;h3 id="1-テーマ開発ベース選定">1. テーマ・開発ベース選定&lt;/h3>
+&lt;ul>
+&lt;li>使用テーマ：&lt;code>hugo-PaperMod&lt;/code>&lt;/li>
+&lt;li>GitHub リポジトリ（テーマ管理）：&lt;code>https://github.com/masa162/ikuta-minimal-theme&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h3 id="2-ローカル開発環境の立ち上げ">2. ローカル開発環境の立ち上げ&lt;/h3>
+&lt;ul>
+&lt;li>&lt;code>hugo server&lt;/code> により &lt;code>localhost:1313&lt;/code> で確認&lt;/li>
+&lt;li>最初のページレンダリング成功（タイトル表示のみ）&lt;/li>
+&lt;/ul>
+&lt;h3 id="3-投稿用ディレクトリの作成">3. 投稿用ディレクトリの作成&lt;/h3>
+&lt;ul>
+&lt;li>&lt;code>mkdir -p content/posts&lt;/code>&lt;/li>
+&lt;li>&lt;code>hugo new content/posts/first-memo.md&lt;/code> により記事ファイル生成&lt;/li>
+&lt;/ul>
+&lt;h3 id="4-記事が404エラーになる問題の調査と解決">4. 記事が404エラーになる問題の調査と解決&lt;/h3>
+&lt;ul>
+&lt;li>&lt;code>draft = false&lt;/code> が設定されていないことが原因&lt;/li>
+&lt;li>フロントマターを TOML形式で記述（&lt;code>+++&lt;/code> で囲む）&lt;/li>
+&lt;li>&lt;code>config.toml&lt;/code> に &lt;code>[permalinks] posts = &amp;quot;/posts/:slug/&amp;quot;&lt;/code> を追加&lt;/li>
+&lt;/ul>
+&lt;h3 id="5-slugの明示記述回避作業効率向上の工夫">5. slugの明示記述回避（作業効率向上の工夫）&lt;/h3>
+&lt;ul>
+&lt;li>&lt;code>.md&lt;/code>ファイル名をスラッグとして自動使用する設定に変更&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-toml" data-lang="toml">&lt;span style="display:flex;">&lt;span>[&lt;span style="color:#a6e22e">frontmatter&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">slug&lt;/span> = &lt;span style="color:#e6db74">&amp;#34;filename&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="6-markdownとフロントマターの理解深化">6. Markdownとフロントマターの理解深化&lt;/h3>
+&lt;ul>
+&lt;li>YAMLとTOMLの違い、Hugoでの推奨形式（TOML）&lt;/li>
+&lt;li>&lt;code>.md&lt;/code>ファイルとMarkdown構文の本質を学習&lt;/li>
+&lt;li>フロントマターは“記事のメタ情報＝設計図”であるという本質的理解&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-学び成果">📌 学び・成果&lt;/h2>
+&lt;ul>
+&lt;li>実装作業以上に「構造と思想」の理解が深まった&lt;/li>
+&lt;li>Hugo開発における「ファイル駆動型開発」の考え方を体得&lt;/li>
+&lt;li>Markdownの役割、GUIとCLIの違い、Notionとの関係性を比較整理&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-現在のディレクトリ構成要約">📁 現在のディレクトリ構成（要約）&lt;/h2>
+&lt;pre tabindex="0">&lt;code>ikuta-minimal-theme/
 ├── content/
-│   └── posts/
-│       └── first-memo.md
+│ └── posts/
+│ └── first-memo.md
 ├── themes/
-│   └── hugo-PaperMod/
+│ └── hugo-PaperMod/
 ├── config.toml
 ├── layouts_backup/
-&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
-&lt;h2 id=&#34;-次回todo後半作業予定&#34;&gt;📘 次回ToDo（後半作業予定）&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;archetypeテンプレのカスタマイズと運用整備&lt;/li&gt;
-&lt;li&gt;OGP/metaタグなどSEOの下地整備&lt;/li&gt;
-&lt;li&gt;PaperModテーマの軽量カスタム&lt;/li&gt;
-&lt;li&gt;Notion・GitHub・Hugo間の情報連携最適化&lt;/li&gt;
-&lt;li&gt;公開構成へのNetlifyまたはGitHub Pages展開&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;/code>&lt;/pre>&lt;hr>
+&lt;h2 id="-次回todo後半作業予定">📘 次回ToDo（後半作業予定）&lt;/h2>
+&lt;ul>
+&lt;li>archetypeテンプレのカスタマイズと運用整備&lt;/li>
+&lt;li>OGP/metaタグなどSEOの下地整備&lt;/li>
+&lt;li>PaperModテーマの軽量カスタム&lt;/li>
+&lt;li>Notion・GitHub・Hugo間の情報連携最適化&lt;/li>
+&lt;li>公開構成へのNetlifyまたはGitHub Pages展開&lt;/li>
+&lt;/ul></description></item></channel></rss>
